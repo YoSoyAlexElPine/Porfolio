@@ -1,69 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Linkedin from '../icons/LinkedIn.astro';
+import Github from '../icons/GitHub.astro';
+import Mail from '../icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Briefcase from '../icons/Briefcase.astro';
+import Code from '../icons/Code.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		
-	</main>
-</Layout>
+<Layout
+  title="Portfolio de Alex Pineño Sánchez - Desarrollador Full Stack especializado en IA y Big Data"
+  description="Descubre el portfolio de Alex Pineño Sánchez, un desarrollador Full Stack con experiencia en tecnologías avanzadas como inteligencia artificial, big data y desarrollo web. Con un enfoque en soluciones innovadoras y escalables, Alex combina habilidades técnicas y creatividad para crear proyectos de alto impacto. Explora su experiencia en desarrollo de software, proyectos de IA y análisis de datos."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-24">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="https://avatars.githubusercontent.com/u/119886032?v=4?s=400"
+        alt="Alex Pineño Sanchez"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, soy Alex Pineño
+        <a
+          href="https://www.linkedin.com/in/alex-pine%C3%B1o-sanchez-7556b4208/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span>Desarrollador de software full stack especializado en </span>
+        <span class="text-yellow-200/90">BackEnd, Big Data y IA. </span>
+        <span class="text-red-200/90">Desde Ciudad Real, España</span>
+      </h2>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/alex-pine%C3%B1o-sanchez-7556b4208/"
+        >
+          <Linkedin class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/YoSoyAlexElPine">
+          <Github class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:alexpinesanz@gmail.com">
+          <Mail class="size-4 md:size-6" />
+          alexpinesanz@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="Proyectos">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Code />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>

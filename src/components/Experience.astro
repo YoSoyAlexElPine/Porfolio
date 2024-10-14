@@ -1,0 +1,30 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+  {
+    date: 'Actualmente...',
+    title: 'Desarrollador .NET para ERP en Empresa de Logística',
+    description:
+      'Desarrollo de un sistema ERP utilizando .NET para una empresa de logística, gestionando todo el ciclo de vida del proyecto de forma autónoma. Desde la toma de requisitos y la comunicación directa con el cliente, hasta el diseño de la interfaz y el backend. Implementé módulos de gestión de inventario, seguimiento de pedidos y facturación. La solución permitió mejorar la eficiencia operativa de la empresa mediante la automatización de procesos clave y la integración con sus sistemas existentes.',
+    link: '',
+  },
+  {
+    date: 'Marzo 2024',
+    title: 'Desarrollador Full Stack con PHP',
+    description:
+      'Responsable del diseño y desarrollo completo de aplicaciones web utilizando PHP y bases de datos SQL. Creación de interfaces intuitivas, optimización de consultas a bases de datos y gestión de operaciones CRUD. Implementación de soluciones personalizadas para clientes, mejorando su presencia online mediante el desarrollo de funcionalidades dinámicas y escalables, integrando APIs externas y asegurando el rendimiento óptimo de los sistemas.',
+    link: '',
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
